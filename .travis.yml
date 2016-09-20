@@ -1,0 +1,7 @@
+language: bash
+
+install:
+    - git clone https://github.com/Teketel/docker-lib.git ~/docker-libs
+
+script:
+    - docker build .

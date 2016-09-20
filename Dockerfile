@@ -2,7 +2,8 @@ FROM python:2.7
 
 ENV ANDROGUARD_DIR=~/androguard
 
-RUN apt-get update && apt-get install -y \
+RUN dpkg --add-architecture i386 && \
+    apt-get update && apt-get install -y \
     build-essential python-dev libxml2-dev libxslt1-dev \
     git curl wget \
     default-jre default-jdk \

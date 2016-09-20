@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     python-setuptools libatlas-dev libatlas3gf-base python-numpy python-scipy python-sklearn \
 
 
-RUN pip install --no-cache-dir \
+RUN pip install \
     boto \
     ipython \
     raven \

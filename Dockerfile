@@ -1,6 +1,6 @@
 FROM python:2.7
 
-ENV ANDROGUARD_DIR=~/androguard
+ENV ANDROGUARD_DIR=/opt/androguard
 
 RUN dpkg --add-architecture i386 && \
     apt-get update && apt-get install -y \
@@ -31,6 +31,7 @@ RUN git clone https://github.com/androguard/androguard.git ${ANDROGUARD_DIR} && 
 	cd ${ANDROGUARD_DIR} && \
 	git checkout f9b2f8121e11098c59d720687377f87d96766111 && \
 	cd -
+ENV PYTHONPATH=${ANDROGUARD_DIR}
 
 RUN wget http://chilkatdownload.com/9.5.0.59/chilkat-9.5.0-python-2.7-x86_64-linux.tar.gz && \
 	tar -xf chilkat-9.5.0-python-2.7-x86_64-linux.tar.gz && \
@@ -58,4 +59,14 @@ RUN wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/li
     wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.0.0.jar -O /usr/local/bin/apktool.jar && \
     chmod +x /usr/local/bin/apktool
 
-RUN git clone https://github.com/egirault/googleplay-api.git
+RUN git clone https://github.com/egirault/googleplay-api.git /opt/googleplay-api
+
+ENV PYTHONPATH=${PYTHONPATH}:/opt/googleplay-api
+
+# Test if the modules are installed correctly
+#    Check android develpment tools
+RUN dx && aapt
+
+#    Check python modules
+COPY test_modules.py ~/
+RUN python ~/test_modules.py

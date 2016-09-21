@@ -25,7 +25,8 @@ RUN pip install --no-cache-dir \
     progressbar \
     networkx \
     protobuf \
-    python-hashes
+    python-hashes \
+    MySQL-python
 
 RUN git clone https://github.com/androguard/androguard.git ${ANDROGUARD_DIR} && \
 	cd ${ANDROGUARD_DIR} && \

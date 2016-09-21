@@ -65,7 +65,7 @@ ENV PYTHONPATH=${PYTHONPATH}:/opt/googleplay-api
 
 # Test if the modules are installed correctly
 #    Check android develpment tools
-RUN dx && aapt
+RUN dx --version && aapt --version
 
 #    Check python modules
 COPY test_modules.py ~/

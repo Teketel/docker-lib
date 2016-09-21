@@ -10,7 +10,7 @@ RUN dpkg --add-architecture i386 && \
     python-mysqldb libtiff5-dev libjpeg62-turbo-dev zlib1g-dev \
     libfreetype6-dev liblcms2-dev libwebp-dev tcl8.5-dev tk8.5-dev python-tk \
     python-setuptools libatlas-dev libatlas3gf-base python-numpy python-scipy python-sklearn \
-    libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1 lib32bz2-1.0:i386
+    libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 lib32z1 libbz2-1.0:i386
 
 
 RUN pip install --no-cache-dir \

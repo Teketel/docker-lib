@@ -68,5 +68,5 @@ ENV PYTHONPATH=${PYTHONPATH}:/opt/googleplay-api
 RUN dx --version && aapt v
 
 #    Check python modules
-COPY test_modules.py ~/
+ADD test_modules.py ~/
 RUN python ~/test_modules.py

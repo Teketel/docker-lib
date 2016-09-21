@@ -5,7 +5,7 @@ ENV ANDROGUARD_DIR=~/androguard
 RUN dpkg --add-architecture i386 && \
     apt-get update && apt-get install -y \
     build-essential python-dev libxml2-dev libxslt1-dev \
-    git curl wget \
+    git curl wget unzip \
     default-jre default-jdk \
     python-mysqldb libtiff5-dev libjpeg62-turbo-dev zlib1g-dev \
     libfreetype6-dev liblcms2-dev libwebp-dev tcl8.5-dev tk8.5-dev python-tk \

@@ -22,6 +22,10 @@ RUN pip install --no-cache-dir \
     pycrypto \
     pyyaml \
     pytest \
+    numpy \
+    scipy \
+    scikit-learn \
+    matplotlib \
     progressbar \
     networkx \
     protobuf \
@@ -67,6 +71,9 @@ ENV PYTHONPATH=${PYTHONPATH}:/opt/googleplay-api
 # Test if the modules are installed correctly
 #    Check android develpment tools
 RUN dx --version && aapt v
+
+#    Check apktool
+RUN apktool --version
 
 #    Check python modules
 ADD test_modules.py /opt/

@@ -9,7 +9,7 @@ RUN dpkg --add-architecture i386 && \
     default-jre default-jdk \
     python-mysqldb libtiff5-dev libjpeg62-turbo-dev zlib1g-dev \
     libfreetype6-dev liblcms2-dev libwebp-dev tcl8.5-dev tk8.5-dev python-tk \
-    python-setuptools libatlas-dev libatlas3gf-base python-numpy python-scipy python-sklearn
+    python-openssl python-setuptools libatlas-dev libatlas3gf-base python-numpy python-scipy python-sklearn
 
 
 RUN pip install --no-cache-dir \
@@ -20,6 +20,7 @@ RUN pip install --no-cache-dir \
     web.py \
     Pillow \
     pycrypto \
+    pyOpenSSL \
     pyyaml \
     pytest \
     numpy \

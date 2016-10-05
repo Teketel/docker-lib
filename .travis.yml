@@ -14,4 +14,4 @@ before_scrpt:
     - cd "$IMAGE"
 
 script:
-    - docker build . -t "$IMAGE"
+    - docker build -t "$IMAGE" $IMAGE/

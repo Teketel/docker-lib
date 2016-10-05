@@ -23,9 +23,7 @@ RUN pip install --no-cache-dir \
     scikit-learn \
     matplotlib \
     progressbar \
-    networkx \
-
-
+    networkx
 	
 RUN wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -O /usr/local/bin/apktool && \
     wget https://bitbucket.org/iBotPeaches/apktool/downloads/apktool_2.0.0.jar -O /usr/local/bin/apktool.jar && \

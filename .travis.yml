@@ -1,10 +1,17 @@
 language: bash
-
 services: 
     - docker
+
+env:
+    - IMAGE=piero
+    - IMAGE=piero-ml
 
 install:
     - git clone https://github.com/Teketel/docker-lib.git ~/docker-libs
 
+before_scrpt:
+    - env | sort
+    - cd "$IMAGE"
+
 script:
-    - docker build .
+    - docker build . -t "$IMAGE"

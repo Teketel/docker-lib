@@ -16,3 +16,4 @@ before_scrpt:
 
 script:
     - docker build -t "$IMAGE" $IMAGE/
+    - docker images
